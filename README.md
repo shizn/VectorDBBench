@@ -4,6 +4,49 @@
 [![Downloads](https://pepy.tech/badge/vectordb-bench)](https://pepy.tech/project/vectordb-bench)
 
 **Leaderboard:** https://zilliz.com/benchmark
+
+## TiDB Vector Benchmark Report (08/09/2024)
+
+### Search Performance Test (1M Dataset, 768 Dim) (~1GB)
+**Qps (more is better)**
+
+![QPS](./docs/qps.png)
+
+**Recall (more is better)**
+
+![Recall](./docs/recall.png)
+
+**Serial_latency_p99 (less is better)**
+
+![Serial Latency P99](./docs/serial_latency_p99.png)
+
+### Search Performance Test (500K Dataset, 1536 Dim) (~1GB)
+
+**Qps (more is better)**
+
+![QPS](./docs/qps_500k.png)
+
+**Recall (more is better)**
+
+![Recall](./docs/recall_500k.png)
+
+**Serial_latency_p99 (less is better)**
+
+![Serial Latency P99](./docs/serial_latency_p99_500k.png)
+
+
+**Configuration: TiDB Serverless Free Cluster**
+- Cluster Tier: Free Cluster
+- Cluster Version: serverless
+- Region: AWS (us-west-2), test server in the same region
+- Connection: public network
+
+**Configuration: TiDB Self-Managed 8c**
+- Topology: 8c (1 TiDB + 1 TiKV + 1 PD + 1 TiFlash WriteNode), 8c (1 TiFlash ReadNode)
+- Instance Type: AWS c5.2xlarge (8c, us-west-2), test server in the same region
+- Connection: public network
+
+
 ## Quick Start
 ### Prerequirement
 ``` shell
